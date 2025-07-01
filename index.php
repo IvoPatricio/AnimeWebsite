@@ -46,5 +46,9 @@
       <?php include 'includes/contact.php'; ?>
     </div>
 
+    <div class="container-fluid p-0 d-flex">
+      <?php include 'includes/footer.php'; ?>
+    </div>
+
   </body>
 </html>
