@@ -3,7 +3,7 @@
         <div class="col">
             <p class="footer-text d-flex align-items-center m-0">
                 <i class="fas fa-copyright"></i>
-                2025 Ivo Marques - Creative Work. Feel free to steal
+                2025 Ivo Marques - Creative Work. Feel free to use
             </p>
         </div>
     </div>
