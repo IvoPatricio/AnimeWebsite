@@ -73,11 +73,17 @@ body {
   color: #8FCFFF;
 }
 
+.row-minheight{
+  min-height: 300px;
+}
+
 .title-text{
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 2rem;
   font-weight: bold;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.05rem;
 }
 
 .regular-text{
@@ -87,6 +93,10 @@ body {
   font-weight: lighter;
 }
 
-.row-minheight{
-  min-height: 300px;
+.footer-text{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  word-spacing: 0.2rem;
+  font-weight: lighter;
 }
