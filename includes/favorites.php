@@ -1,7 +1,7 @@
 <?php
   include 'config.php';
-  $sql = "SELECT title, image_path, description FROM favorites";
-  $result = $conn->query($sql);
+  $sql_favorites = "SELECT title, image_path, description FROM favorites";
+  $result = $conn->query($sql_favorites);
 ?>
 
 <section id="onepage_favorites" class="container-fluid p-0 d-flex flex-column">
@@ -15,7 +15,7 @@
 
   if ($result && $result->num_rows > 0)
   {
-    while ($row = $result->fetch_assoc())
+    while ($row_favorites = $result->fetch_assoc())
     {
       echo '
         <div class="row row-minheight d-flex align-items-stretch justify-content-start">
@@ -23,12 +23,12 @@
 
           <div class="col-4 p-0 d-flex">
             <img 
-              src="images/' . htmlspecialchars($row['image_path']) . '"
-              class="img-fluid logo_img_main" alt="' . htmlspecialchars($row['title']) . '" />
+              src="images/' . htmlspecialchars($row_favorites['image_path']) . '"
+              class="img-fluid logo_img_main" alt="' . htmlspecialchars($row_favorites['title']) . '" />
           </div>
 
           <div class="col-4 m-2 d-flex">
-            <p class="regular-text">' . htmlspecialchars($row['description']) . '</p>
+            <p class="regular-text">' . htmlspecialchars($row_favorites['description']) . '</p>
           </div>
 
           <div class="col-2 p-0 d-flex"></div>

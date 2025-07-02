@@ -1,7 +1,7 @@
 <?php
     include 'includes/config.php';
-    $sql = "SELECT main_banner_img_path, side_banner_img_path FROM homepage";
-    $result = $conn->query($sql);
+    $sql_index = "SELECT main_banner_img_path, side_banner_img_path FROM homepage";
+    $result_index = $conn->query($sql_index);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,26 +17,26 @@
     <header id="home" class="container-fluid p-0 d-flex">
 
     <?php
-    if ($result && $result->num_rows > 0)
+    if ($result_index && $result_index->num_rows > 0)
     {
-      $row = $result->fetch_assoc();
+      $row_index = $result_index->fetch_assoc();
       echo '
       <div class="row row-minheight d-flex align-items-stretch justify-content-center">
         <div class="col-2 p-0 d-flex">
           <img
-            src="images/' . htmlspecialchars($row['side_banner_img_path']) . '"
+            src="images/' . htmlspecialchars($row_index['side_banner_img_path']) . '"
             class="img-fluid side_image side_image_flip_horizontally" />
         </div>
 
         <div class="col-8 p-0 d-flex">
           <img 
-            src="images/' . htmlspecialchars($row['main_banner_img_path']) . '"
+            src="images/' . htmlspecialchars($row_index['main_banner_img_path']) . '"
             class="img-fluid logo_img_main" />
         </div>
 
         <div class="col-2 p-0 d-flex">
           <img
-            src="images/' . htmlspecialchars($row['side_banner_img_path']) . '"
+            src="images/' . htmlspecialchars($row_index['side_banner_img_path']) . '"
             class="img-fluid side_image" />
         </div>
       </div>
