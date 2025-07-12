@@ -21,9 +21,6 @@
           <a class="nav-link" href="#onepage_favorites">Favorite Animes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#onepage_upcoming_animes">Upcoming Animes</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#onepage_about">About</a>
         </li>
         <li class="nav-item">

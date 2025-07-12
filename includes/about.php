@@ -1,4 +1,4 @@
-<section id="onepage_about" class="container-fluid p-0 d-flex flex-column">
+<section id="onepage_about" class="container-fluid p-4 d-flex flex-column">
   <div class="row justify-content-center">
     <div class="col-auto">
       <h2 class="title-text">About</h2>
