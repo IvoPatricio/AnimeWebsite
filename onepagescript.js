@@ -1,40 +1,53 @@
 async function router()
 {
     const hash = location.hash || "#/";
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.active-pages').forEach(p => p.classList.remove('page-active'));
 
     switch (hash) {
     case "#/":
-        document.getElementById("home").classList.add("active");
+        document.getElementById("home").classList.add("page-active");
+        break;
+    case "#onepage_favorites":
+        const favoriteDiv = document.getElementById("onepage_favorites");
+        if (!favoriteDiv.innerHTML.trim()) {
+        try {
+            const res = await fetch("includes/favorites.php");
+            const html = await res.text();
+            favoriteDiv.innerHTML = html;
+        } catch (e) {
+            favoriteDiv.innerHTML = "<p>Failed to load about.php</p>";
+        }
+        }
+        favoriteDiv.classList.add("page-active");
         break;
     case "#onepage_about":
         const aboutDiv = document.getElementById("onepage_about");
         if (!aboutDiv.innerHTML.trim()) {
         try {
-            const res = await fetch("about.php");
+            const res = await fetch("includes/about.php");
             const html = await res.text();
             aboutDiv.innerHTML = html;
         } catch (e) {
             aboutDiv.innerHTML = "<p>Failed to load about.php</p>";
         }
         }
-        aboutDiv.classList.add("active");
+        aboutDiv.classList.add("page-active");
         break;
-    case "#/contact":
-        const contactDiv = document.getElementById("contact");
+    case "#onepage_contact":
+        const contactDiv = document.getElementById("onepage_contact");
         if (!contactDiv.innerHTML.trim()) {
         try {
-            const res = await fetch("contact.php");
+            const res = await fetch("includes/contact.php");
             const html = await res.text();
             contactDiv.innerHTML = html;
         } catch (e) {
             contactDiv.innerHTML = "<p>Failed to load contact.php</p>";
         }
         }
-        contactDiv.classList.add("active");
+        contactDiv.classList.add("page-active");
         break;
     default:
-        document.getElementById("home").classList.add("active");
+        document.getElementById("home").classList.add("page-active");
     }
 }
 window.addEventListener("hashchange", router);

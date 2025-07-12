@@ -101,10 +101,10 @@ body {
   font-weight: lighter;
 }
 
-.page{
-  display: none;
+.active-pages{
+  display: none !important;
 }
 
-.active{
-  display: block;
+.page-active{
+  display: block !important;
 }
