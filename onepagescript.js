@@ -11,7 +11,7 @@ async function router()
         const favoriteDiv = document.getElementById("onepage_favorites");
         if (!favoriteDiv.innerHTML.trim()) {
         try {
-            const res = await fetch("includes/favorites.php");
+            const res = await fetch("pages/favorites.php");
             const html = await res.text();
             favoriteDiv.innerHTML = html;
         } catch (e) {
@@ -24,7 +24,7 @@ async function router()
         const aboutDiv = document.getElementById("onepage_about");
         if (!aboutDiv.innerHTML.trim()) {
         try {
-            const res = await fetch("includes/about.php");
+            const res = await fetch("pages/about.php");
             const html = await res.text();
             aboutDiv.innerHTML = html;
         } catch (e) {
@@ -37,7 +37,7 @@ async function router()
         const contactDiv = document.getElementById("onepage_contact");
         if (!contactDiv.innerHTML.trim()) {
         try {
-            const res = await fetch("includes/contact.php");
+            const res = await fetch("pages/contact.php");
             const html = await res.text();
             contactDiv.innerHTML = html;
         } catch (e) {

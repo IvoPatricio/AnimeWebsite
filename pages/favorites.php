@@ -1,16 +1,10 @@
 <?php
-  include 'config.php';
+  include '../includes/config.php';
   $sql_favorites = "SELECT title, image_path, description FROM favorites";
   $result = $conn->query($sql_favorites);
 ?>
 
 <section id="onepage_favorites" class="container-fluid p-4 d-flex flex-column">
-  <div class="row justify-content-center">
-    <div class="col-auto">
-      <h2 class="title-text">Favorite Animes</h2>
-    </div>
-  </div>
-
   <?php
 
   if ($result && $result->num_rows > 0)
@@ -19,19 +13,18 @@
     {
       echo '
         <div class="row row-minheight d-flex align-items-stretch justify-content-start">
-          <div class="col-2 p-0 d-flex"></div>
 
           <div class="col-4 p-0 d-flex">
-            <img 
-              src="images/' . htmlspecialchars($row_favorites['image_path']) . '"
-              class="img-fluid logo_img_main" alt="' . htmlspecialchars($row_favorites['title']) . '" />
+            <img
+              src="easyload_low"
+              data-src="images/' . htmlspecialchars($row_favorites['image_path']) . '"
+              class="lazyload"
+            />
           </div>
 
-          <div class="col-4 m-2 d-flex">
+          <div class="col-7 m-2 d-flex">
             <p class="regular-text">' . htmlspecialchars($row_favorites['description']) . '</p>
           </div>
-
-          <div class="col-2 p-0 d-flex"></div>
         </div>
       ';
     }

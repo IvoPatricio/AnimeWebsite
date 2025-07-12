@@ -21,7 +21,8 @@
   <div id="app">
     <div id="home" class="active-pages page-active">
       <div class="container-fluid p-0">
-      <?php include 'home.php'; ?>
+        <?php include 'pages/home.php'; ?>
+      </div>
     </div>
 
     <div id="onepage_favorites" class="active-pages"></div>
