@@ -9,7 +9,6 @@
 <head>
   <head>
     <?php include 'includes/header.php'; ?>
-    <script src="onepagescript.js" defer></script>
   </head>
 
 </head>

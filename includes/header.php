@@ -36,3 +36,6 @@
 
 <!-- MY CSS-->
 <link rel="stylesheet" href="css/styles.css" />
+
+<!-- MY ONEPAGE SCRIPT-->
+<script src="js/onepagescript.js" defer></script>
