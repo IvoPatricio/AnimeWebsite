@@ -24,10 +24,12 @@
       </div>
     </div>
 
-    <div id="onepage_favorites" class="active-pages"></div>
-    <div id="onepage_about" class="active-pages"></div>
-    <div id="onepage_contact" class="active-pages"></div>
+    <!--<div id="onepage_favorites" class="active-pages"></div>-->
+    <!--<div id="onepage_about" class="active-pages"></div>-->
+    <!--<div id="onepage_contact" class="active-pages"></div>-->
+    <?php include 'pages/contact.php'; ?>
 
   </div>
-
+  <?php include 'includes/footer.php'; ?>
+</body>
 </html>
