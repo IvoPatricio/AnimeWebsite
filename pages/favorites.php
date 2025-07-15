@@ -17,7 +17,7 @@
           <div class="col-4 p-0 d-flex">
             <img
               src="easyload_low"
-              data-src="images/' . htmlspecialchars($row_favorites['image_path']) . '"
+              data-src="images/favorites/' . htmlspecialchars($row_favorites['image_path']) . '"
               class="lazyload"
             />
           </div>
