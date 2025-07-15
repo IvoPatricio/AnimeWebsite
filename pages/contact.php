@@ -1,6 +1,6 @@
 <section id="onepage_contact" class="container-fluid p-4 d-flex flex-column">
   <div class="row justify-content-center">
-    <div class="col">
+    <div class="col-8">
       <?php
       include "form-handler.php";
 
