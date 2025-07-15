@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     //DATABASE CONNECTION TO SAVE THE VALUES
     if ($isFormValid)
     {
-        $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, message, is_read) VALUES (?, ?, ?, 0)");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
