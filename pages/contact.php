@@ -1,4 +1,5 @@
 <section id="onepage_contact" class="container-fluid p-4 d-flex flex-column">
+  <div class="row justify-content-center">
     <div class="col">
       <?php
       include "form-handler.php";
@@ -16,17 +17,17 @@
           echo ($mensagemError != "") ? "<li>$mensagemError</li>" : "";
 
           echo "</ul></div>";
-      }
-      else
+        }
+        else
         {
           echo "<div class='alert alert-success mt-3' role='alert'>
                   Form submitted successfully!
                 </div>";
+        }
       }
-    }
-    ?>
+      ?>
 
-    <form action="#onepage_contact.php" novalidate method="post">
+      <form action="#onepage_contact.php" novalidate method="post">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control <?= ($nomeError != '') ? 'error-box' : '' ?>" id="nome"
@@ -45,14 +46,14 @@
 
         <div class="mb-3">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" placeholder="Deixe uma mensagem aqui..." id="mensagem"
+            <textarea class="form-control" placeholder="Leave your message here..." id="mensagem"
                 name="mensagem" rows="5"><?= $mensagem ?></textarea>
             <div class="error"><?= $mensagemError ?></div>
         </div>
         <button type="submit" class="btn btn-primary">
             Submit
         </button>
-    </form>
-
+      </form>
+    </div>
   </div>
 </section>

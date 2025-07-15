@@ -15,29 +15,29 @@ $isFormValid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST["nome"] == "") {
-        $nomeError = "Falta o nome";
+        $nomeError = "Name is missing!";
         $isFormValid = false;
     } else {
         $nome = test_input($_POST["nome"]);
         if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)) {
-            $nomeError = "Só letras e espaços!";
+            $nomeError = "Only letters and spaces!";
             $isFormValid = false;
         }
     }
 
     if ($_POST["email"] == "") {
-        $emailError = "Falta o email";
+        $emailError = "Email is missing!";
         $isFormValid = false;
     } else {
         $email = test_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailError = "Invalid email format";
+            $emailError = "Invalid email format!";
             $isFormValid = false;
         }
     }
 
     if ($_POST["mensagem"] == "") {
-        $mensagemError = "Falta a mensagem";
+        $mensagemError = "Message is missing!";
         $isFormValid = false;
     } else {
         $mensagem = test_input($_POST["mensagem"]);
