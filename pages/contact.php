@@ -10,13 +10,19 @@
         {
           echo "<div class='alert alert-danger mt-3' role='alert'>
                   The form was not submitted due to errors. Please correct the following fields:
-                  <ul>";
+                <ul>";
 
           echo ($nomeError != "") ? "<li>$nomeError</li>" : "";
           echo ($emailError != "") ? "<li>$emailError</li>" : "";
           echo ($mensagemError != "") ? "<li>$mensagemError</li>" : "";
 
           echo "</ul></div>";
+        }
+        else if (!empty($dbError))
+        {
+          echo "<div class='alert alert-danger mt-3' role='alert'>
+                  $dbError
+                </div>";
         }
         else
         {

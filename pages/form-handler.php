@@ -1,10 +1,9 @@
 <?php
 include 'includes/config.php';
 
-$sql = "SELECT 1";
 if ($conn->query($sql) === TRUE || $conn->query($sql) !== FALSE)
 {
-    echo "Query ran successfully!";
+    //success
 }
 else
 {
@@ -20,12 +19,12 @@ function test_input($data)
 }
 
 $nome = $email = $mensagem = "";
-$nomeError = $emailError = $mensagemError = "";
+$nomeError = $emailError = $mensagemError = $dbError= "";
 
 $isFormValid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
+{
     if ($_POST["nome"] == "")
     {
         $nomeError = "Name is missing!";
@@ -68,20 +67,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     //DATABASE CONNECTION TO SAVE THE VALUES
     if ($isFormValid)
     {
-        $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, message, is_read) VALUES (?, ?, ?, 0)");
-        if ($stmt === false) {
+        $insertMessage = $conn->prepare("INSERT INTO contact_messages (name, email, message, is_read) VALUES (?, ?, ?, 0)");
+        if ($insertMessage === false) {
             die("Prepare failed: " . $conn->error);
         }
         //sss - type of variable (string, etc)
-        $stmt->bind_param("sss", $nome, $email, $mensagem);
+        $insertMessage->bind_param("sss", $nome, $email, $mensagem);
 
-        if (!$stmt->execute())
+        if (!$insertMessage->execute())
         {
             $isFormValid = false;
             $dbError = "Failed to save your message. Please try again later.";
         }
-
-        $stmt->close();
+        $insertMessage->close();
 
         if ($isFormValid) {
             $nome = $email = $mensagem = "";
