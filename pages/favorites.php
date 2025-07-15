@@ -12,18 +12,17 @@
     while ($row_favorites = $result->fetch_assoc())
     {
       echo '
-        <div class="row row-minheight d-flex align-items-stretch justify-content-start">
-
-          <div class="col-4 p-0 d-flex">
+        <div class="row row-minheight d-flex align-items-center justify-content-center">
+          <div class="col-4 m-4 d-flex">
             <img
               src="easyload_low"
-              data-src="images/favorites/' . htmlspecialchars($row_favorites['image_path']) . '"
-              class="lazyload"
+              data-src="images/' . htmlspecialchars($row_favorites['image_path']) . '"
+              class="lazyload favorite-img"
             />
           </div>
 
-          <div class="col-7 m-2 d-flex">
-            <p class="regular-text">' . htmlspecialchars($row_favorites['description']) . '</p>
+          <div class="col-6 m-4 d-flex align-items-center">
+            <p class="regular-text">' . nl2br(htmlspecialchars($row_favorites['description'])) . '</p>
           </div>
         </div>
       ';

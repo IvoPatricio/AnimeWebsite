@@ -89,8 +89,15 @@ body {
 .regular-text{
   color: white;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: lighter;
+}
+
+.about-text{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 .footer-text{
@@ -107,4 +114,10 @@ body {
 
 .page-active{
   display: block !important;
+}
+
+.favorite-img{
+  width: 333px;
+  height: 500px;
+  object-fit: cover; object-position: center;
 }
